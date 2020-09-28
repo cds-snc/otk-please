@@ -111,6 +111,7 @@ func handler(w http.ResponseWriter, req *http.Request) {
 		environment = "Staging"
 	} else {
 		w.Write([]byte("Please enter either *demo* or *staging*"))
+		return
 	}
 
 	token, err := getToken(bearerToken, address)
